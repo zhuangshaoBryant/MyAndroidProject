@@ -1,1 +1,1 @@
-Android一些小demo案例，用于巩固Android知识
+Android一些小demo案例，用于巩固Android知识。
