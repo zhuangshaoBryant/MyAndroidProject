@@ -57,7 +57,7 @@ ActivityC运行在A的栈中，当打开B应用时，ActivityC会返回到B应�
 销毁：onPause、onStop、onDestroyView、onDestroy、onDetach
 * 异常情况下的生命周期：
 onSaveInstanceState（）方法来保存一些数据，在onCreate、onCreateView、onActivityCreated里面的Bundle可以获取到
-
+* 一个小demo，用fragment模拟新闻页面，打开标题进入内容，同时适配平板与手机。
 
 #markdown基本用法学习使用
 
