@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/left_fragment"
-        android:name="com.zhuang.jackyli.fragmenttest.LeftFragment"
+        android:name="com.zhuang.jackyli.fragmenttest.fragment.TitleFragment"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"/>
