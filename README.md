@@ -1,5 +1,5 @@
-#Android一些小demo案例，用于巩固Android知识。
-##1、ActivityLifeCycle
+# Android一些小demo案例，用于巩固Android知识。
+## 1、ActivityLifeCycle
 
 1.创建控制日志输出的工具类，可以定义自己的customLevel来决定输出什么级别的日志。
 
@@ -42,6 +42,9 @@ onSaveInstanceState会自动保存一些实现onSaveInstanceState方法的UI控�
 * singleinstance模式：A打开B，B打开C。B设置为单例模式
 返回的时候是C、A、B
 ![异常销毁时生命周期](https://github.com/zhuangshaoBryant/MyAndroidProject/raw/master/Screenshots/4.png)
+* TaskAffinity 与 singleTask使用时，待启动的Activity会运行在名字为TaskAffinity的任务栈中
+TaskAffinity 与 allowTaskReparenting属性配对使用时，allowTaskReparenting为true。（A应用启动B应用的Activity C时，
+ActivityC运行在A的栈中，当打开B应用时，ActivityC会返回到B应用的任务栈中，因此打开的不是B的启动Activity，而是ActivityC）
 
 
 
