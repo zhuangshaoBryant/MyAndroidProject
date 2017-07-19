@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ListViewAndRecyclerViewTest</string>
+    <string name="title_name">聊天界面</string>
+</resources>

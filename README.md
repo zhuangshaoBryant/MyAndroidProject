@@ -46,7 +46,8 @@ onSaveInstanceState会自动保存一些实现onSaveInstanceState方法的UI控�
 TaskAffinity 与 allowTaskReparenting属性配对使用时，allowTaskReparenting为true。（A应用启动B应用的Activity C时，
 ActivityC运行在A的栈中，当打开B应用时，ActivityC会返回到B应用的任务栈中，因此打开的不是B的启动Activity，而是ActivityC）
 
-
+## 2、ListViewAndRecyclerViewTest
+* 学习RecyclerView使用用法，包括子View的点击事件
 
 
 #markdown基本用法学习使用
