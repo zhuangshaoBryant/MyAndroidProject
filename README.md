@@ -48,6 +48,15 @@ ActivityC运行在A的栈中，当打开B应用时，ActivityC会返回到B应�
 
 ## 2、ListViewAndRecyclerViewTest
 * 学习RecyclerView使用用法，包括子View的点击事件
+## 3、FragmentTest
+* Fragment生命周期:
+启动到显示：onAttach、onCreate、onCreateView、onActivityCreated、onStart、onResume
+![异常销毁时生命周期](https://github.com/zhuangshaoBryant/MyAndroidProject/raw/master/Screenshots/5.png)
+切换另一个Fragment时：onPause、onStop、onDestroyView
+再显示回来：onCreateView、onActivityCreated、onStart、onResume
+销毁：onPause、onStop、onDestroyView、onDestroy、onDetach
+* 异常情况下的生命周期：
+onSaveInstanceState（）方法来保存一些数据，在onCreate、onCreateView、onActivityCreated里面的Bundle可以获取到
 
 
 #markdown基本用法学习使用
