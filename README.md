@@ -58,11 +58,40 @@ ActivityC运行在A的栈中，当打开B应用时，ActivityC会返回到B应�
 * 异常情况下的生命周期：
 onSaveInstanceState（）方法来保存一些数据，在onCreate、onCreateView、onActivityCreated里面的Bundle可以获取到
 * 一个小demo，用fragment模拟新闻页面，打开标题进入内容，同时适配平板与手机。
-* 易混点:1、在activity里的fragment标签，添加name属性，会自动布局fragment
+* 易混点:
+1、在activity里的fragment标签，添加name属性，会自动布局fragment
 2、getSupportFragmentManager.beginTranscation.replace(R.layout.xxx,fragment).commit   可以实现动态添加fragment
 3、在activity里调用fragment的方法，首先需要获取fragment实例，getFragmentManager.findFragmentById(R.id.xxx)，然后可以调用fragment的方法了
 4、在fragment里调用activity的方法，getActivity().xxx方法
 
+## 4、BroadcastTest
+1. 学习动态广播、静态广播
+动态广播，要在代码中registerReceiver(mDongtaiTaiBroadcast, mIntentFilter)，最后记得unRegisterReceiver，以免内存泄漏
+静态广播，创建BroadcastReceiver,会在清单文件里注册，添加name属性，例如开启启动等
+2. 自定义广播
+* 第一种：自定义静态广播：类似静态广播，创建BroadcastReceiver,会在清单文件里注册，添加自定义的name属性，在代码中添加`sendBroadcast(new Intent("自定义name属性"));`
+* 第二种：自定义动态广播：首先动态注册广播,添加自定义的IntentFilter。 之后发送广播，使用自定义的Intent。如下例子：
+```
+    mIntentFilter.addAction("com.zhuang.jackyli.mylocal");
+    localBroadcastManager.registerReceiver(mDongtaiTaiBroadcast,mIntentFilter);
+    
+    button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent("com.zhuang.jackyli.mylocal");
+            localBroadcastManager.sendBroadcast(intent);
+        }
+    });
+```
+3. 有序广播`sendBroadcast(new Intent("自定义name属性"),null);`在清单文件里<intent-filter 添加priority属性>
+4. 本地广播：使用localBroadcastManager.registerReceiver和localBroadcastManager.unRegisterReceiver，其余用法一样。
+5. 小demo
+
+## AndroidStudio快捷键
+* 提取全局变量：Ctrl+Alt+F
+* 提取方法：Ctrl+Alt+M
+* 在代码下新增加一行：shift+enter
+* 光标跳转上下一个：ctrl+alt+left/right
 #markdown基本用法学习使用
 
 
