@@ -58,6 +58,10 @@ ActivityC运行在A的栈中，当打开B应用时，ActivityC会返回到B应�
 * 异常情况下的生命周期：
 onSaveInstanceState（）方法来保存一些数据，在onCreate、onCreateView、onActivityCreated里面的Bundle可以获取到
 * 一个小demo，用fragment模拟新闻页面，打开标题进入内容，同时适配平板与手机。
+* 易混点:1、在activity里的fragment标签，添加name属性，会自动布局fragment
+2、getSupportFragmentManager.beginTranscation.replace(R.layout.xxx,fragment).commit   可以实现动态添加fragment
+3、在activity里调用fragment的方法，首先需要获取fragment实例，getFragmentManager.findFragmentById(R.id.xxx)，然后可以调用fragment的方法了
+4、在fragment里调用activity的方法，getActivity().xxx方法
 
 #markdown基本用法学习使用
 
