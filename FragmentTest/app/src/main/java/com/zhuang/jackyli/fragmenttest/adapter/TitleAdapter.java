@@ -30,14 +30,6 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.ViewHolder> 
         this.fragment = fragment;
     }
 
-    public TitleAdapter(List<News> mNewsList, Boolean isTwo) {
-        this.mNewsList = mNewsList;
-        this.isTwo = isTwo;
-    }
-
-    public TitleAdapter(List<News> mNewsList) {
-        this.mNewsList = mNewsList;
-    }
 
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
