@@ -63,7 +63,6 @@ public class MainActivity extends BaseActivity {
             builder.setCancelable(true).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-
                 }
             }).show();
 
