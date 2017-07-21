@@ -87,11 +87,29 @@ onSaveInstanceState（）方法来保存一些数据，在onCreate、onCreateVie
 4. 本地广播：使用localBroadcastManager.registerReceiver和localBroadcastManager.unRegisterReceiver，其余用法一样。
 5. 小demo
 
+## 5、ServiceTest
+* 学习bindService的用法，Service与Activity之间的交互
+service里创建内部类MyBinder继承Binder，onBind（）方法里返回MyBinder对象，因此可以调用MyBinder里的方法
+Activity使用bindService启动Service，其中当绑定Service时ServiceConnection的onServiceConnected会返回一个Binder，将其转换为
+service里的MyBinder对象，从而可以调用Service里的方法
+* 学习了通知栏的消息
+`startForeground(1,notification);`会让服务处于前台，会在系统通知栏一直显示
+* 生命周期
+startService时:onCreate()、onStartCommand()、onDestory()；其中onCreate()调用一次，而每次startService时会调用onStartCommand方法
+bindService时：onCreate()、onBind()、onUnBind()、onDestory()
+当同时调用startService与bindService时，需要同时stopService()与unbindService()才会执行onDestory销毁。
+* IntentService：用于执行后台耗时的服务，任务执行完后会自动结束，由于是服务，优先级会比线程高很多
+自建MyIntentService继承IntentService，onHandleIntent方法就是子线程中的方法，特点是运行完就结束服务
+
+## 6、Handler、AsyncTask用法
+
 ## AndroidStudio快捷键
 * 提取全局变量：Ctrl+Alt+F
 * 提取方法：Ctrl+Alt+M
 * 在代码下新增加一行：shift+enter
 * 光标跳转上下一个：ctrl+alt+left/right
+* 某单词上/下一个出现的地方：shift+F3/F3
+* 项目中查找某个类：ctrl+N
 #markdown基本用法学习使用
 
 
