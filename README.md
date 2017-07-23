@@ -102,6 +102,7 @@ bindService时：onCreate()、onBind()、onUnBind()、onDestory()
 自建MyIntentService继承IntentService，onHandleIntent方法就是子线程中的方法，特点是运行完就结束服务
 
 ## 6、Handler、AsyncTask用法
+* 网络下载进度条在通知栏上显示的demo
 
 ## AndroidStudio快捷键
 * 提取全局变量：Ctrl+Alt+F
